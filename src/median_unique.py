@@ -26,9 +26,6 @@ def word_median_file(input_filename, output_filename):
 	else:
 		median = 0.5*(sorted_unique_count[(cnt+1)/2] + sorted_unique_count[(cnt-1)/2]) 
 	output_file.write("{0}".format(median))
-	print count
-	
-	print unique
   input_file.close()
   output_file.close()
 
