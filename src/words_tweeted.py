@@ -1,5 +1,4 @@
 import sys
-
 # word count for each file
 # call function word_count_line
 def word_count_file(input_filename):
@@ -21,7 +20,7 @@ def word_count_line(line, word_map):
 	else:
 		word_map[word] = word_map[word] + 1
   
- # sorted word_map and output to file
+# sorted word_map and output to file
 def word_count(input_filename, output_filename, output_length):
   word_map = word_count_file(input_filename)
   words = sorted(word_map.keys())
@@ -42,7 +41,6 @@ def main():
   output_filename = sys.argv[2]
   output_length = 30 # for output_file format
   word_count(input_filename, output_filename, output_length)
-
 
 if __name__ == '__main__':
   main()
