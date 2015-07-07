@@ -1,5 +1,6 @@
 # example of program that calculates the median number of unique words per tweet.
 import sys
+import os
 import words_tweeted
 
 def word_median_file(input_filename, output_filename):
@@ -7,7 +8,11 @@ def word_median_file(input_filename, output_filename):
   output_file = open(output_filename, 'w')
   sorted_unique_count = []
   unique_median = []
+  count = 0
   for line in input_file:
+	if count != 0:
+		output_file.write("\n")
+	count = count + 1
 	word_map = {}
 	words_tweeted.word_count_line(line, word_map)
 	unique = len(word_map)
@@ -19,7 +24,8 @@ def word_median_file(input_filename, output_filename):
 		median = sorted_unique_count[cnt/2]
 	else:
 		median = 0.5*(sorted_unique_count[(cnt+1)/2] + sorted_unique_count[(cnt-1)/2]) 
-	output_file.write("{0}\n".format(median))
+	output_file.write("{0}".format(median))
+	
   input_file.close()
   output_file.close()
 
