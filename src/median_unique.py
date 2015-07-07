@@ -16,6 +16,7 @@ def word_median_file(input_filename, output_filename):
 	word_map = {}
 	words_tweeted.word_count_line(line, word_map)
 	unique = len(word_map)
+	
 	pos = sorted_list(sorted_unique_count, 0, len(sorted_unique_count)-1, unique)
 	sorted_unique_count.insert(pos, unique)
 	cnt = len(sorted_unique_count)
@@ -25,7 +26,9 @@ def word_median_file(input_filename, output_filename):
 	else:
 		median = 0.5*(sorted_unique_count[(cnt+1)/2] + sorted_unique_count[(cnt-1)/2]) 
 	output_file.write("{0}".format(median))
+	print count
 	
+	print unique
   input_file.close()
   output_file.close()
 
@@ -35,7 +38,7 @@ def word_median_file(input_filename, output_filename):
 def sorted_list(sorted_unique_count, b, e, unique):
   if len(sorted_unique_count) == 0:
 	return 0
-  pivot = (e - b + 1)/2 
+  pivot = (e + b)/2 
   if e <= b: 
 	pos = min(b,e)
 	key = sorted_unique_count[pos]
