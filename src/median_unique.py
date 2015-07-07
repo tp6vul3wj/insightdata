@@ -1,6 +1,5 @@
 # example of program that calculates the median number of unique words per tweet.
 import sys
-import os
 import words_tweeted
 
 def word_median_file(input_filename, output_filename):

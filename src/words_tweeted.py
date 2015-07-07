@@ -1,3 +1,4 @@
+# example of program that calculates the total number of times each word has been tweeted.
 import sys
 # word count for each file
 # call function word_count_line
